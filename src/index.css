@@ -1,13 +1,52 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #3500D3;
+  --secondary-color: #0C0032;
+  --tertiary-color: #282828;
+  --text-color: #FFFFFF;
+  --hover-color: #FF10F0;
+}
+
+body {
+  font-family: 'Zen Dots', cursive;
+  background-color: #000000;
+  color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Header styling */
+header {
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--tertiary-color);
+}
+
+#business-title, ul {
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul > li {
+  display: inline-block;
+  padding: 1.5em 1.5em;
+}
+
+a, a:visited {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--hover-color);
 }
