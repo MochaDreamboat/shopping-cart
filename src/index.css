@@ -49,4 +49,5 @@ a, a:visited {
 
 a:hover {
   color: var(--hover-color);
+  transition: 0.5s;
 }
