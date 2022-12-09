@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-
+/* TO -DO
+800px
+- Hamburger menu
+- Fix header overflow
+*/
 * {
   margin: 0;
   padding: 0;
@@ -47,7 +51,56 @@ a, a:visited {
   text-decoration: none;
 }
 
-a:hover {
+a:hover, button:hover {
   color: var(--hover-color);
-  transition: 0.5s;
+  transition: 0.4s;
+}
+
+input, button {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Cart layout */
+.shopping-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Item styling */
+.item {
+  margin-top: 2rem;
+  display: block;
+  background-color: red;
+  height: fit-content;
+  width: fit-content;
+  background-color: var(--tertiary-color);
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+}
+
+.item span {
+  width: 100%;
+  display: block;
+  line-height: 1.5rem;
+}
+
+/* Add/delete item styling */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.item input {
+  width: 2rem;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.add {
+  display: block;
+  margin: 0 auto;
 }
