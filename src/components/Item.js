@@ -11,7 +11,7 @@ const Item = ({ item, cartFns }) => {
     const { increment, decrement } = cartFns
 
     return ( 
-    <div className='item'>
+    <div className='item' key={name}>
         <img className='item-image' src={require(image)} alt={name}/>
         <span className='item-title'>{name}</span>
         <span className='item-price'>{price}</span>
