@@ -30,12 +30,13 @@ header {
   width: 100vw;
   display: flex;
   align-items: center;
+  padding: 1.5em;
   background-color: var(--tertiary-color);
 }
 
 #business-title {
-  margin-right: auto;
-  padding-left: 1.5rem;
+ margin-right: auto;
+ margin-left: 1em;
 }
 
 ul {
@@ -45,7 +46,7 @@ ul {
 
 ul > li {
   display: inline-block;
-  padding: 1.5em 1.5em;
+  padding-right: 1.5em;
 }
 
 a, a:visited {
@@ -106,4 +107,14 @@ input::-webkit-inner-spin-button {
 .add {
   display: block;
   margin: 0 auto;
+}
+
+/* Media Queries */
+
+@media(max-width: 800px) {
+/* Implement hamburger menu */
+  ul {
+    display: none;
+  }
+
 }
