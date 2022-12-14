@@ -64,8 +64,8 @@ input, button {
   font-family: 'Orbitron', sans-serif;
 }
 
-/* Cart layout */
-.shopping-cart {
+/* Items layout */
+#items {
   display: flex;
   justify-content: center;
   align-items: center;
