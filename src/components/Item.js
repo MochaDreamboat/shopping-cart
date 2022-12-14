@@ -7,18 +7,18 @@
 
 const Item = ({ item, cartFns }) => {
     
-    const { name, image, price } = item;
+    const { itemName, image, price } = item;
     const { increment, decrement } = cartFns
 
     return ( 
-    <div className='item' key={name}>
-        <img className='item-image' src={require(image)} alt={name}/>
-        <span className='item-title'>{name}</span>
+    <div className='item' key={itemName}>
+        <img classitemN='item-image' src={require(`../items/item_images/${image}`)} alt={itemName}/>
+        <span classitemN='item-title'>{itemName}</span>
         <span className='item-price'>{price}</span>
         <div className='add-to-cart'>
-          <button onClick={decrement()}>-</button>
+          <button onClick={decrement}>-</button>
           <input type="number"/>
-          <button onClick={increment()}>+</button>
+          <button onClick={increment}>+</button>
         </div>
         <button className='add'>Add item</button>
       </div>
@@ -26,3 +26,4 @@ const Item = ({ item, cartFns }) => {
 };
 
 export default Item;
+  
