@@ -4,25 +4,35 @@
     // Should also be able to add to cart from this same interface.
 
 // Modifies shopping cart state which is passed to checkout state
-
-const Item = ({ item, cartFns }) => {
+import React, { useState } from 'react'; 
+const Item = ({ item }) => {
     
-    const { itemName, image, price } = item;
-    const { increment, decrement } = cartFns
+  const { itemName, image, price } = item;
+  const [quantity, updateQuantity] = useState(0);
+  // Fns for incrementing / decrementing an Item w/ button
+  const increment = (e) => {
+    updateQuantity(quantity + 1);
+  }
 
-    return ( 
-    <div className='item' key={itemName}>
-        <img classitemN='item-image' src={require(`../items/item_images/${image}`)} alt={itemName}/>
-        <span classitemN='item-title'>{itemName}</span>
-        <span className='item-price'>{price}</span>
-        <div className='add-to-cart'>
-          <button onClick={decrement}>-</button>
-          <input type="number"/>
-          <button onClick={increment}>+</button>
-        </div>
-        <button className='add'>Add item</button>
+  const decrement = (e) => {
+    if (quantity !== 0) {
+      updateQuantity(quantity - 1);
+    }
+  }
+
+  return ( 
+  <div className='item' key={itemName}>
+      <img classitemN='item-image' src={require(`../items/item_images/${image}`)} alt={itemName}/>
+      <span classitemN='item-title'>{itemName}</span>
+      <span className='item-price'>{price}</span>
+      <div className='add-to-cart'>
+        <button onClick={decrement}>-</button>
+        <input type="number" placeholder={quantity} />
+        <button onClick={increment}>+</button>
       </div>
-    )
+      <button className='add'>Add item</button>
+    </div>
+  )
 };
 
 export default Item;
