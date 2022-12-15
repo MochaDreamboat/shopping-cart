@@ -18,7 +18,7 @@ function App() {
       {/* Mockup for cart Component / items */}
       <main>
         <Routes>
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<About />} />
           <Route path="/items" element={<Items />} />
           <Route path="/checkout" element={<Checkout />}/>
         </Routes>
