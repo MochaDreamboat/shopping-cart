@@ -1,9 +1,7 @@
 import Item from './Item.js';
+// Consider making items a prop from app...
 import mockItems from '../items/itemsOne.js';
-const Items = () => {
-    const mockIncrement = () => {console.log('increment')};
-    const mockDecrement = () => {console.log('decrement')};
-    const cartFns = { mockIncrement, mockDecrement }
+const Items = ({addToCart}) => {
     return (
         <div>
             <h2>Take your pick, choom!</h2>
@@ -12,7 +10,7 @@ const Items = () => {
                     return (
                         <Item
                             item={item}
-                            cartFns={cartFns}
+                            addToCart={addToCart}
                         />
                     )
                 })}

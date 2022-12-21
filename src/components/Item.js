@@ -4,33 +4,48 @@
     // Should also be able to add to cart from this same interface.
 
 // Modifies shopping cart state which is passed to checkout state
-import React, { useState } from 'react'; 
-const Item = ({ item }) => {
+import React, { useEffect, useState } from 'react'; 
+const Item = ({ item, addToCart }) => {
     
   const { itemName, image, price } = item;
   const [quantity, updateQuantity] = useState(0);
+
   // Fns for incrementing / decrementing an Item w/ button
   const increment = (e) => {
     updateQuantity(quantity + 1);
-  }
+    console.log(quantity);
+  };
 
   const decrement = (e) => {
     if (quantity !== 0) {
       updateQuantity(quantity - 1);
     }
+  };
+
+  const handleChange = (e) => {
+    return (e.target.value);
+  };
+
+  const handleQuantity = (e) => {
+    updateQuantity(e.target.value);
+  }
+
+  const pushToCart = () => {
+    addToCart(item, quantity);
+    updateQuantity(0);
   }
 
   return ( 
   <div className='item' key={itemName}>
-      <img classitemN='item-image' src={require(`../items/item_images/${image}`)} alt={itemName}/>
-      <span classitemN='item-title'>{itemName}</span>
+      <img classitem='item-image' src={require(`../items/item_images/${image}`)} alt={itemName}/>
+      <span classitem='item-title'>{itemName}</span>
       <span className='item-price'>{price}</span>
       <div className='add-to-cart'>
         <button onClick={decrement}>-</button>
-        <input type="number" placeholder={quantity} />
+        <input type="number" value={quantity} onChange={handleChange} onBlur={handleQuantity}/>
         <button onClick={increment}>+</button>
       </div>
-      <button className='add'>Add item</button>
+      <button className='add' onClick={pushToCart}>Add item</button>
     </div>
   )
 };
